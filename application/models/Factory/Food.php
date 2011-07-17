@@ -10,6 +10,8 @@
  *
  * @author TEKIN
  */
+
+
 class Model_Factory_Food
 {
     private  $_foodType;
