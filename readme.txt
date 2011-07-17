@@ -1,1 +1,1 @@
-just for master
+imdb database homework (done by the guidence of 'firat yalavuz')
