@@ -21,7 +21,7 @@ class Model_Adapter_PaypalPaymentAdapter implements Model_Adapter_PaypalTransact
 
     public function doPayment($amount, $userInfo)
     {
-        $this->paypalPayment->doPaypalTransaction($amount, $userInfo);
+        return $this->paypalPayment->doPaypalTransaction($amount, $userInfo);
     }
 
 }

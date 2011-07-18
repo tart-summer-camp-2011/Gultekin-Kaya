@@ -10,7 +10,7 @@
  *
  * @author TEKIN
  */
-class Cc5PaymentAdapter implements Model_Adapter_PaymentTransactionInterface
+class Model_Adapter_Cc5PaymentAdapter implements Model_Adapter_PaymentTransactionInterface
 {
     private $cc5Transaction;
     public function __construct()
@@ -20,7 +20,7 @@ class Cc5PaymentAdapter implements Model_Adapter_PaymentTransactionInterface
 
     public function doPayment($amount)
     {
-        $this->cc5Transaction->doCc5Transaction($amount);
+        return $this->cc5Transaction->doCc5Transaction($amount);
     }
 }
 

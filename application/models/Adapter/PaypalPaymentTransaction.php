@@ -14,7 +14,7 @@ class Model_Adapter_PaypalPaymentTransaction
 {
     function doPaypalTransaction($amount, $userName)
     {
-        echo "$userName done paypal transaction with an amount $amount";
+        return "$userName done paypal transaction with an amount $amount";
     }
 }
 

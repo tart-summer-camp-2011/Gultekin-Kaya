@@ -29,17 +29,16 @@ class IndexController extends Zend_Controller_Action
 
     public function adapterAction()
     {
-        $paymentMethodOne = new Model_Adapter_PaymentMethodOne();
-        $paymentMethodTwo = new Model_Adapter_PaymentMethodTwo();
-        $adapterOne = new Model_Adapter_PaymentMethodOneAdapter($paymentMethodOne);
-        $adapterTwo = new Model_Adapter_PaymentMethodTwoAdapter($paymentMethodTwo);
+        $cc5adapter = new Model_Adapter_Cc5PaymentAdapter();
+        $cTrans = new Model_Adapter_PaymentTransaction($cc5adapter);
 
+        $this->view->assing('ctans',$cTrans->doPayment(1000));
 
-        $arrPayments = array('one' => $adapterOne, 'two' => $adapterTwo);
+        $paypalAdapter = new Model_Adapter_PaypalPaymentAdapter();
+        $pTrans = new Model_Adapter_PaymentTransaction($paypalAdapter);
 
-        foreach ($arrPayments as $key => $value) {
-            $this->doPayments($arrPayments[$key]);
-        }
+        $this->view->assign('ptrans',$pTrans->doPayment(3000, 'firat'));
+
     }
 
     public function doPayments(Model_Adapter_PaymentInterface $adater)

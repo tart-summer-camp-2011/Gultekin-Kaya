@@ -10,7 +10,7 @@
  *
  * @author TEKIN
  */
-class PaymentTransaction
+class Model_Adapter_PaymentTransaction
 {
     private $adaptor;
     private $userInfo;
@@ -25,9 +25,9 @@ class PaymentTransaction
     public function doPayment($amount)
     {
         if(isset($userIn )){
-            $this->adaptor->doPaymentTransaction ($amount, $userInfo);
+            return $this->adaptor->doPaymentTransaction ($amount, $userInfo);
         } else {
-            $this->adaptor->doPaymentTransaction($amount);
+            return $this->adaptor->doPaymentTransaction($amount);
         }
     }
 

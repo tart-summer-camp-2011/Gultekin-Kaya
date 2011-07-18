@@ -14,7 +14,7 @@ class Model_Adapter_CC5PaymentTransaction
 {
     //put your code here
     public function doCc5Transaction($amount){
-        echo "cc5 transaction done with $amount";
+        return"cc5 transaction done with $amount";
     }
 
 }
